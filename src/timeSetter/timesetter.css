@@ -1,0 +1,81 @@
+.gamut__timeSetter {
+  position: fixed;
+  background: #efefef;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+.gamut__timeSetter__body {
+  display: -webkit-box;
+  display: flex;
+}
+
+.gamut__timeSetter__paramBox {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  box-sizing: border-box;
+}
+
+.gamut__timeSetter__paramLabel {
+  color: #424242;
+  font-size: 14px;
+  width: 100%;
+  border-width: 1px 1px 0px 1px;
+  padding: 3px 3px 0px 3px;
+  box-sizing: border-box;
+  border-color: #888888;
+  border-style: solid;
+}
+
+.gamut__timeSetter__paramInputWrapper {
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+}
+
+.gamut__timeSetter__paramInputWrapper__input {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1rem;
+  padding: 5px;
+}
+
+.gamut__timeSetter__paramInputWrapper__controller--plus, .gamut__timeSetter__paramInputWrapper__controller--minus {
+  color: #424242;
+  position: absolute;
+  right: 5px;
+  cursor: pointer;
+  padding: 0px 3px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  background: #f1f1f1;
+  -webkit-user-select: none;
+}
+
+.gamut__timeSetter__paramInputWrapper__controller--plus:hover, .gamut__timeSetter__paramInputWrapper__controller--minus:hover {
+  color: #0088ff;
+  background: #dedede;
+}
+
+.gamut__timeSetter__doneButton {
+  width: 100%;
+  text-align: center;
+  border: 1px solid #888888;
+  border-top: none;
+  box-sizing: border-box;
+  color: #424242;
+  padding: 2px;
+}
+
+.gamut__timeSetter__doneButton:hover {
+  cursor: pointer;
+  background: #dedede;
+}

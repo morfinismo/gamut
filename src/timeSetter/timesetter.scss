@@ -1,0 +1,86 @@
+.gamut__timeSetter{    
+    position:fixed;
+    background:#efefef;
+    display:flex;
+    flex-direction: column;
+
+    &__body{
+        display: flex;
+    }
+
+    &__paramBox{  
+        display:flex; 
+        align-items:center;
+        flex-direction:column;
+        box-sizing: border-box;
+    }
+
+    &__paramLabel{
+        color:#424242;
+        font-size:14px; 
+        width:100%; 
+        border-width: 1px 1px 0px 1px; 
+        padding:3px 3px 0px 3px; 
+        box-sizing:border-box; 
+        border-color:#888888; 
+        border-style:solid;
+    }
+    
+    &__paramInputWrapper{
+        box-sizing: border-box;
+        width: 100%;
+        position: relative;
+
+        &__input{
+            width:100%; 
+            box-sizing:border-box; 
+            font-size: 1rem;
+            padding: 5px;
+        }
+
+        &__controller--plus,
+        &__controller--minus{
+            color: #424242;
+            position: absolute;
+            right: 5px;
+            cursor: pointer;
+            padding: 0px 3px;
+            transform: rotate(90deg);
+            background: #f1f1f1;
+            -webkit-user-select: none;
+            
+            &:hover{
+                color: #0088ff;
+                background: #dedede;
+            }
+        }
+
+            
+    }
+    
+    &__doneButton{
+        width: 100%;
+        text-align: center;
+        border: 1px solid #888888;
+        border-top: none;
+        box-sizing: border-box;
+        color: #424242;
+        padding: 2px;
+    }
+    
+    &__doneButton:hover{
+        cursor: pointer;
+        background: #dedede;
+    }
+
+}
+    
+
+    
+
+    
+
+    
+
+
+    

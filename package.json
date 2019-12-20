@@ -1,0 +1,40 @@
+{
+  "name": "gamut",
+  "version": "0.0.1",
+  "description": "Google App Maker Utilities",
+  "main": "gamut.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morfinismo/gamut.git"
+  },
+  "keywords": [
+    "Google",
+    "AppMaker"
+  ],
+  "author": "Francisco Morfin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/morfinismo/gamut/issues"
+  },
+  "homepage": "https://github.com/morfinismo/gamut#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "autoprefixer": "^9.7.3",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "node-sass": "^4.13.0",
+    "postcss-cli": "^6.1.3",
+    "rollup": "^1.27.13",
+    "rollup-plugin-node-resolve": "^5.2.0"
+  },
+  "dependencies": {}
+}
