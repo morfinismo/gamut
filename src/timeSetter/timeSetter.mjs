@@ -1,4 +1,4 @@
-import { validateTextBox, getDiv } from '../helpers/helpers.mjs';
+import { validateTextBox, newElem } from '../helpers/helpers.mjs';
 
 const timeSetter = (textBox, config) => {
 
@@ -31,6 +31,11 @@ const timeSetter = (textBox, config) => {
 
     //force the input to be text type
     $ts.input.setAttribute("type", "text");
+
+    //modify label position if App Maker widget
+    if ($ts.isAppMaker) {
+        textBox.getElement().children[0].classList.add("gamut--label-fix");
+    }
 
     //set options values from config
     if (config !== undefined && config !== null && typeof (config) === "object") {
@@ -159,7 +164,7 @@ const timeSetter = (textBox, config) => {
     }
 
     //create the timeSetter widget
-    const widget = getDiv();
+    const widget = newElem("div");
 
     //open the time setter widget
     $ts.open = (top, left, height, width) => {
@@ -173,7 +178,7 @@ const timeSetter = (textBox, config) => {
         widget.classList.add("gamut__timeSetter");
 
         //create the widget body
-        const body = getDiv();
+        const body = newElem("div");
         body.classList.add("gamut__timeSetter__body");
         body.style.flexDirection = width < 175 ? "column" : "row";
 
@@ -182,12 +187,12 @@ const timeSetter = (textBox, config) => {
         timeParams.forEach((timeParam) => {
 
             //create the param box
-            const paramBox = getDiv();
+            const paramBox = newElem("div");
             paramBox.classList.add("gamut__timeSetter__paramBox");
             paramBox.style.width = width < 175 ? "100%" : "33.3%";
 
             //create param label
-            const paramLabel = document.createElement("span");
+            const paramLabel = newElem("span");
             paramLabel.classList.add("gamut__timeSetter__paramLabel");
             paramLabel.style.textAlign = (width < 175 || width > 224) ? "center" : "left";
             const paramLabelText = document.createTextNode(timeParam);
@@ -197,11 +202,11 @@ const timeSetter = (textBox, config) => {
             paramBox.appendChild(paramLabel);
 
             //create the wrapper for the param input
-            const paramInputWrapper = getDiv();
+            const paramInputWrapper = newElem("div");
             paramInputWrapper.classList.add("gamut__timeSetter__paramInputWrapper");
 
             //create the param input
-            const parameterInput = document.createElement("input");
+            const parameterInput = newElem("input");
             parameterInput.classList.add("gamut__timeSetter__paramInputWrapper__input");
             parameterInput.style.textAlign = (width < 175 || width > 224) ? "center" : "left";
             parameterInput.style.paddingRight = (width < 175 || width > 224) ? "15px" : "0px";
@@ -228,7 +233,7 @@ const timeSetter = (textBox, config) => {
             paramInputWrapper.appendChild(parameterInput);
 
             //create the plus controller
-            const paramPlusButton = document.createElement("span");
+            const paramPlusButton = newElem("span");
             paramPlusButton.classList.add("gamut__timeSetter__paramInputWrapper__controller--plus");
             paramPlusButton.setAttribute("data-action", "add");
             const paramPlusButtonText = document.createTextNode("❮");
@@ -240,7 +245,7 @@ const timeSetter = (textBox, config) => {
             paramInputWrapper.appendChild(paramPlusButton);
 
             //create the minus controller
-            const paramMinusButton = document.createElement("span");
+            const paramMinusButton = newElem("span");
             paramMinusButton.classList.add("gamut__timeSetter__paramInputWrapper__controller--minus");
             paramMinusButton.setAttribute("data-action", "substract");
             const paramMinusButtonText = document.createTextNode("❯");
@@ -262,7 +267,7 @@ const timeSetter = (textBox, config) => {
         widget.appendChild(body);
 
         //done button
-        const doneButton = getDiv();
+        const doneButton = newElem("div");
         doneButton.classList.add("gamut__timeSetter__doneButton");
         const doneButtonText = document.createTextNode("DONE");
         doneButton.appendChild(doneButtonText);

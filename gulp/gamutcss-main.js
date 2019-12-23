@@ -5,7 +5,9 @@ sass.compiler = require('node-sass');
 
 const sources = [
     "src/gamut-main.css",
-    "src/timeSetter/timeSetter.css"
+    "src/timeSetter/timeSetter.css",
+    "src/formatTextBox/formatTextBox.css",
+    "src/formatSwitch/formatSwitch.css"
 ];
 
 function bundleCss(){

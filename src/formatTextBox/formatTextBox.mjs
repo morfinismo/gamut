@@ -59,7 +59,7 @@ const formatTextBox = (textBox, config) => {
 
         //apply number attributes if needed
         if (options.type === "number") {
-            elem.classList.add("gamutNumberInput");
+            elem.classList.add("gamut--numberInput");
             elem.setAttribute("max", options.max);
             elem.setAttribute("min", options.min);
             elem.setAttribute("step", options.step);

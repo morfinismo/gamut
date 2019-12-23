@@ -1,0 +1,5 @@
+.gamut--numberInput::-webkit-inner-spin-button,
+.gamut--numberInput::-webkit-outer-spin-button {
+  opacity: 1;
+  height: 1.2rem;
+}

@@ -1,4 +1,4 @@
-const {src, dest, watch } = require("gulp");
+const {src, dest, watch, series } = require("gulp");
 const rollup = require('rollup');
 const uglify = require("gulp-uglify");
 const babel = require("gulp-babel");
@@ -6,22 +6,20 @@ const babel = require("gulp-babel");
 const sources = [
     "./src/gamut-main.mjs",
     "./src/timeSetter/timeSetter.mjs",
-    "./src/formatTextBox/formatTextBox.mjs"
+    "./src/formatTextBox/formatTextBox.mjs",
+    "./src/formatSwitch/formatSwitch.mjs"
 ];
-
 
 function rollupJob(){
     return rollup.rollup({
             input: './src/gamut-main.mjs',
-        }).then(bundle => {
-            return bundle.write({
-                file: './gamut.min.js',
-                format: 'cjs',
-                name: 'gamut',
-                sourcemap: false
-            }).then(()=>{
-                return mainGamut();
-            });        
+    }).then(bundle => {
+        return bundle.write({
+            file: './gamut.min.js',
+            format: 'cjs',
+            name: 'gamut',
+            sourcemap: false
+        });      
     });
 }
 
@@ -33,5 +31,5 @@ function mainGamut(){
 }
 
 exports.gamutjs = function(){
-    watch(sources, rollupJob);
+    watch(sources, series(rollupJob, mainGamut));
 };

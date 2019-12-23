@@ -1,0 +1,1049 @@
+/* This section controls the global switch variant colors */
+:root{
+    --unchecked: rgba(0,0,0,0.5);
+    --uncheckedButton: rgb(255,255,255);
+    --checked: rgb(66,133,244);
+    --checkedButton: rgb(66,133,244);
+}
+
+.app-Checkbox--Switch{
+    &>.app-Checkbox-Input{
+        background-color: var(--unchecked);
+    }
+
+    &>.app-Checkbox-Label:after {
+        background-color: var(--uncheckedButton);
+    }
+
+    &>.app-Checkbox-Input:checked {
+        background-color: var(--checked);
+    }
+
+    &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+        background-color: var(--checkedButton);
+    }
+}
+
+
+/* By default, they all should be gray when off 
+   Each color has 5 variants, 300, 500, 700, 900 and Alfa(default)
+   The variants were defined using the material-ui color palette
+   https://material-ui.com/customization/color/#color-palette
+*/
+.gamutSwitch{
+    &>.app-Checkbox-Input{
+        background-color: rgba(0,0,0,0.5) !important;
+    }
+
+    &>.app-Checkbox-Label:after {
+        background-color: rgb(255,255,255) !important;
+    }
+
+    /* Red Variants */
+    &--Red{
+        &>.app-Checkbox-Input:checked {
+            background-color: #9b0000 !important;
+        }
+
+        &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+            background-color: #ff5131 !important;
+        }
+
+        &300{
+            &>.app-Checkbox-Input:checked {
+                background-color: #af4448 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #ffa4a2 !important;
+            }
+        }
+
+        &500{
+            &>.app-Checkbox-Input:checked {
+                background-color: #ba000d !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #ff7961 !important;
+            }
+        }
+
+        &700{
+            &>.app-Checkbox-Input:checked {
+                background-color: #9a0007 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #ff6659 !important;
+            }
+        }
+
+        &900{
+            &>.app-Checkbox-Input:checked {
+                background-color: #7f0000 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #f05545 !important;
+            }
+        }
+    }
+
+    /* Pink Variants */
+    &--Pink{
+        &>.app-Checkbox-Input:checked {
+            background-color: #8e0038 !important;
+        }
+
+        &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+            background-color: #fd558f !important;
+        }
+
+        &300{
+            &>.app-Checkbox-Input:checked {
+                background-color: #ba2d65 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #ff94c2 !important;
+            }
+        }
+
+        &500{
+            &>.app-Checkbox-Input:checked {
+                background-color: #b0003a !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #ff6090 !important;
+            }
+        }
+
+        &700{
+            &>.app-Checkbox-Input:checked {
+                background-color: #8c0032 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #fa5788 !important;
+            }
+        }
+
+        &900{
+            &>.app-Checkbox-Input:checked {
+                background-color: #560027 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #bc477b !important;
+            }
+        }
+    }
+
+    /* Purple Variants */
+    &--Purple{
+        &>.app-Checkbox-Input:checked {
+            background-color: #7200ca !important;
+        }
+
+        &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+            background-color: #e254ff !important;
+        }
+
+        &300{
+            &>.app-Checkbox-Input:checked {
+                background-color: #883997 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #ee98fb !important;
+            }
+        }
+
+        &500{
+            &>.app-Checkbox-Input:checked {
+                background-color: #6a0080 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #d05ce3 !important;
+            }
+        }
+
+        &700{
+            &>.app-Checkbox-Input:checked {
+                background-color: #4a0072 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #ae52d4 !important;
+            }
+        }
+
+        &900{
+            &>.app-Checkbox-Input:checked {
+                background-color: #12005e !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #7c43bd !important;
+            }
+        }
+    }
+
+    /* Deep Puple Variants */
+    &--DeepPurple{
+        &>.app-Checkbox-Input:checked {
+            background-color: #0a00b6 !important;
+        }
+
+        &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+            background-color: #9d46ff !important;
+        }
+
+        &300{
+            &>.app-Checkbox-Input:checked {
+                background-color: #c7a4ff !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #65499c !important;
+            }
+        }
+
+        &500{
+            &>.app-Checkbox-Input:checked {
+                background-color: #320b86 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #9a67ea !important;
+            }
+        }
+
+        &700{
+            &>.app-Checkbox-Input:checked {
+                background-color: #140078 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #8559da !important;
+            }
+        }
+
+        &900{
+            &>.app-Checkbox-Input:checked {
+                background-color: #000063 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #6746c3 !important;
+            }
+        }
+    }
+
+    /* Indigo Variants */
+    &--Indigo{
+        &>.app-Checkbox-Input:checked {
+            background-color: #0026ca !important;
+        }
+
+        &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+            background-color: #7a7cff !important;
+        }
+
+        &300{
+            &>.app-Checkbox-Input:checked {
+                background-color: #aab6fe !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #49599a !important;
+            }
+        }
+
+        &500{
+            &>.app-Checkbox-Input:checked {
+                background-color: #002984 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #757de8 !important;
+            }
+        }
+
+        &700{
+            &>.app-Checkbox-Input:checked {
+                background-color: #001970 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #666ad1 !important;
+            }
+        }
+
+        &900{
+            &>.app-Checkbox-Input:checked {
+                background-color: #000051 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #534bae !important;
+            }
+        }
+    }
+
+    /* Blue Variants */
+    &--Blue{
+        &>.app-Checkbox-Input:checked {
+            background-color: #0039cb !important;
+        }
+
+        &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+            background-color: #768fff !important;
+        }
+
+        &300{
+            &>.app-Checkbox-Input:checked {
+                background-color: #2286c3 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #9be7ff !important;
+            }
+        }
+
+        &500{
+            &>.app-Checkbox-Input:checked {
+                background-color: #0069c0 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #6ec6ff !important;
+            }
+        }
+
+        &700{
+            &>.app-Checkbox-Input:checked {
+                background-color: #004ba0 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #63a4ff !important;
+            }
+        }
+
+        &900{
+            &>.app-Checkbox-Input:checked {
+                background-color: #002171 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #5472d3 !important;
+            }
+        }
+    }
+
+    /* Light Blue Variants */
+    &--LightBlue{
+        &>.app-Checkbox-Input:checked {
+            background-color: #0064b7 !important;
+        }
+
+        &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+            background-color: #64c1ff !important;
+        }
+
+        &300{
+            &>.app-Checkbox-Input:checked {
+                background-color: #0093c4 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #8bf6ff !important;
+            }
+        }
+
+        &500{
+            &>.app-Checkbox-Input:checked {
+                background-color: #007ac1 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #67daff !important;
+            }
+        }
+
+        &700{
+            &>.app-Checkbox-Input:checked {
+                background-color: #005b9f !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #5eb8ff !important;
+            }
+        }
+
+        &900{
+            &>.app-Checkbox-Input:checked {
+                background-color: #002f6c !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #4f83cc !important;
+            }
+        }
+    }
+
+    /* Cyan Variants */
+    &--Cyan{
+        &>.app-Checkbox-Input:checked {
+            background-color: #0088a3 !important;
+        }
+
+        &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+            background-color: #62ebff !important;
+        }
+
+        &300{
+            &>.app-Checkbox-Input:checked {
+                background-color: #009faf !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #88ffff !important;
+            }
+        }
+
+        &500{
+            &>.app-Checkbox-Input:checked {
+                background-color: #008ba2 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #62eeff !important;
+            }
+        }
+
+        &700{
+            &>.app-Checkbox-Input:checked {
+                background-color: #006978 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #56c8d8 !important;
+            }
+        }
+
+        &900{
+            &>.app-Checkbox-Input:checked {
+                background-color: #00363a !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #428e92 !important;
+            }
+        }
+    }
+
+    /* Teal Variants */
+    &--Teal{
+        &>.app-Checkbox-Input:checked {
+            background-color: #008e76 !important;
+        }
+
+        &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+            background-color: #5df2d6 !important;
+        }
+
+        &300{
+            &>.app-Checkbox-Input:checked {
+                background-color: #00867d !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #82e9de !important;
+            }
+        }
+
+        &500{
+            &>.app-Checkbox-Input:checked {
+                background-color: #00675b !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #52c7b8 !important;
+            }
+        }
+
+        &700{
+            &>.app-Checkbox-Input:checked {
+                background-color: #006978 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #48a999 !important;
+            }
+        }
+
+        &900{
+            &>.app-Checkbox-Input:checked {
+                background-color: #00251a !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #39796b !important;
+            }
+        }
+    }
+
+    /* Green Variants */
+    &--Green{
+        &>.app-Checkbox-Input:checked {
+            background-color: #009624 !important;
+        }
+
+        &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+            background-color: #5efc82 !important;
+        }
+
+        &300{
+            &>.app-Checkbox-Input:checked {
+                background-color: #519657 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #b2fab4 !important;
+            }
+        }
+
+        &500{
+            &>.app-Checkbox-Input:checked {
+                background-color: #087f23 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #80e27e !important;
+            }
+        }
+
+        &700{
+            &>.app-Checkbox-Input:checked {
+                background-color: #00600f !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #6abf69 !important;
+            }
+        }
+
+        &900{
+            &>.app-Checkbox-Input:checked {
+                background-color: #4c8c4a !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #003300 !important;
+            }
+        }
+    }
+
+    /* Light Green Variants */
+    &--LightGreen{
+        &>.app-Checkbox-Input:checked {
+            background-color: #1faa00 !important;
+        }
+
+        &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+            background-color: #9cff57 !important;
+        }
+
+        &300{
+            &>.app-Checkbox-Input:checked {
+                background-color: #7da453 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #e1ffb1 !important;
+            }
+        }
+
+        &500{
+            &>.app-Checkbox-Input:checked {
+                background-color: #6b9b37 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #bef67a !important;
+            }
+        }
+
+        &700{
+            &>.app-Checkbox-Input:checked {
+                background-color: #99d066 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #387002 !important;
+            }
+        }
+
+        &900{
+            &>.app-Checkbox-Input:checked {
+                background-color: #003d00 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #629749 !important;
+            }
+        }
+    }
+
+    /* Lime Variants */
+    &--Lime{
+        &>.app-Checkbox-Input:checked {
+            background-color: #79b700 !important;
+        }
+
+        &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+            background-color: #e4ff54 !important;
+        }
+
+        &300{
+            &>.app-Checkbox-Input:checked {
+                background-color: #a8b545 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #ffffa6 !important;
+            }
+        }
+
+        &500{
+            &>.app-Checkbox-Input:checked {
+                background-color: #99aa00 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #ffff6e !important;
+            }
+        }
+
+        &700{
+            &>.app-Checkbox-Input:checked {
+                background-color: #7c8500 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #e4e65e !important;
+            }
+        }
+
+        &900{
+            &>.app-Checkbox-Input:checked {
+                background-color: #524c00 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #b4a647 !important;
+            }
+        }
+    }
+
+    /* Yellow Variants */
+    &--Yellow{
+        &>.app-Checkbox-Input:checked {
+            background-color: #c7a500 !important;
+        }
+
+        &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+            background-color: #ffff52 !important;
+        }
+
+        &300{
+            &>.app-Checkbox-Input:checked {
+                background-color: #ffffa8 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #cabf45 !important;
+            }
+        }
+
+        &500{
+            &>.app-Checkbox-Input:checked {
+                background-color: #c8b900 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #ffff72 !important;
+            }
+        }
+
+        &700{
+            &>.app-Checkbox-Input:checked {
+                background-color: #c49000 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #fff263 !important;
+            }
+        }
+
+        &900{
+            &>.app-Checkbox-Input:checked {
+                background-color: #bc5100 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #ffb04c !important;
+            }
+        }
+    }
+
+    /* Amber Variants */
+    &--Amber{
+        &>.app-Checkbox-Input:checked {
+            background-color: #c67c00 !important;
+        }
+
+        &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+            background-color: #ffdd4b !important;
+        }
+
+        &300{
+            &>.app-Checkbox-Input:checked {
+                background-color: #c8a415 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #ffff81 !important;
+            }
+        }
+
+        &500{
+            &>.app-Checkbox-Input:checked {
+                background-color: #c79100 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #fff350 !important;
+            }
+        }
+
+        &700{
+            &>.app-Checkbox-Input:checked {
+                background-color: #c67100 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #ffd149 !important;
+            }
+        }
+
+        &900{
+            &>.app-Checkbox-Input:checked {
+                background-color: #c43e00 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #ffa040 !important;
+            }
+        }
+    }
+
+    /* Orange Variants */
+    &--Orange{
+        &>.app-Checkbox-Input:checked {
+            background-color: #c43c00 !important;
+        }
+
+        &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+            background-color: #ff9e40 !important;
+        }
+
+        &300{
+            &>.app-Checkbox-Input:checked {
+                background-color: #c88719 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #ffe97d !important;
+            }
+        }
+
+        &500{
+            &>.app-Checkbox-Input:checked {
+                background-color: #c66900 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #ffc947 !important;
+            }
+        }
+
+        &700{
+            &>.app-Checkbox-Input:checked {
+                background-color: #bb4d00 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #ffad42 !important;
+            }
+        }
+
+        &900{
+            &>.app-Checkbox-Input:checked {
+                background-color: #ac1900 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #ff833a !important;
+            }
+        }
+    }
+
+    /* Deep Orange Variants */
+    &--DeepOrange{
+        &>.app-Checkbox-Input:checked {
+            background-color: #a30000 !important;
+        }
+
+        &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+            background-color: #ff6434 !important;
+        }
+
+        &300{
+            &>.app-Checkbox-Input:checked {
+                background-color: #c75b39 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #ffbb93 !important;
+            }
+        }
+
+        &500{
+            &>.app-Checkbox-Input:checked {
+                background-color: #c41c00 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #ff8a50 !important;
+            }
+        }
+
+        &700{
+            &>.app-Checkbox-Input:checked {
+                background-color: #ac0800 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #ff7d47 !important;
+            }
+        }
+
+        &900{
+            &>.app-Checkbox-Input:checked {
+                background-color: #870000 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #f9683a !important;
+            }
+        }
+    }
+
+    /* Brown Variants */
+    &--Brown{
+        &>.app-Checkbox-Input:checked {
+            background-color: #40241a !important;
+        }
+
+        &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+            background-color: #9c786c !important;
+        }
+
+        &300{
+            &>.app-Checkbox-Input:checked {
+                background-color: #d3b8ae !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #725b53 !important;
+            }
+        }
+
+        &500{
+            &>.app-Checkbox-Input:checked {
+                background-color: #4b2c20 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #a98274 !important;
+            }
+        }
+
+        &700{
+            &>.app-Checkbox-Input:checked {
+                background-color: #321911 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #8b6b61 !important;
+            }
+        }
+
+        &900{
+            &>.app-Checkbox-Input:checked {
+                background-color: #1b0000 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #6a4f4b !important;
+            }
+        }
+    }
+
+    /* Grey Variants */
+    &--Grey{
+        &>.app-Checkbox-Input:checked {
+            background-color: #494949 !important;
+        }
+
+        &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+            background-color: #a4a4a4 !important;
+        }
+
+        &300{
+            &>.app-Checkbox-Input:checked {
+                background-color: #ffffff !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #aeaeae !important;
+            }
+        }
+
+        &500{
+            &>.app-Checkbox-Input:checked {
+                background-color: #707070 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #cfcfcf !important;
+            }
+        }
+
+        &700{
+            &>.app-Checkbox-Input:checked {
+                background-color: #8e8e8e !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #373737 !important;
+            }
+        }
+
+        &900{
+            &>.app-Checkbox-Input:checked {
+                background-color: #000000 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #484848 !important;
+            }
+        }
+    }
+
+    /* Blue Grey Variants */
+    &--BlueGrey{
+        &>.app-Checkbox-Input:checked {
+            background-color: #29434e !important;
+        }
+
+        &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+            background-color: #819ca9 !important;
+        }
+
+        &300{
+            &>.app-Checkbox-Input:checked {
+                background-color: #62757f !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #c1d5e0 !important;
+            }
+        }
+
+        &500{
+            &>.app-Checkbox-Input:checked {
+                background-color: #707070 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #8eacbb !important;
+            }
+        }
+
+        &700{
+            &>.app-Checkbox-Input:checked {
+                background-color: #1c313a !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #718792 !important;
+            }
+        }
+
+        &900{
+            &>.app-Checkbox-Input:checked {
+                background-color: #000a12 !important;
+            }
+    
+            &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+                background-color: #4f5b62 !important;
+            }
+        }
+    }    
+
+    /* Red & Green Variant */
+    &--RedGreen{
+        &>.app-Checkbox-Input{
+            background-color: red !important;
+        }
+
+        &>.app-Checkbox-Label:after {
+            background-color: darkred !important;
+        }
+
+        &>.app-Checkbox-Input:checked {
+            background-color: green !important;
+        }
+
+        &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+            background-color: darkgreen !important;
+        }
+    }
+
+    /* Black & White Variant */
+    &--BlackWhite{
+        &>.app-Checkbox-Input{
+            background-color: #000000 !important;
+        }
+
+        &>.app-Checkbox-Label:after {
+            background-color: #424242 !important;
+        }
+
+        &>.app-Checkbox-Input:checked {
+            background-color: #bbbbbb !important;
+        }
+
+        &>.app-Checkbox-Input:checked+.app-Checkbox-Label:after {
+            background-color: #ffffff !important;
+        }
+    }
+
+}
