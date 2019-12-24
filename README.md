@@ -5,12 +5,29 @@ A collection of utilites to use with [Google App Maker](https://developers.googl
 
 ## Browser support
 
-Currently, only Google Chrome v60+ is supported. Compatibility with other browsers has not been tested yet. Please feel free to contribute.
+Guaranteed support for Google Chrome v60+. Compatibility with other browsers has not been tested yet but most of it shoud work.
+
+## Initializing the library
+
+### Inside Google App Maker
+
+Make sure you add the the external resourcesi n the app settings.
+
+Then, put the following code in the app startup script:
+
+    loader.suspendLoad();
+    gamut.init(app);
+    loader.resumeLoad();
+
+### Outside Google App Maker
+
+    <script src="gamut.min.js" onload="gamut.init()"></script>
 
 ## List of utilities
 
- - [Time Setter](##Time-Setter)
- - [Format Text Box](##Format-Text-Box)
+ - [Time Setter](#Time-Setter)
+ - [Format Text Box](#Format-Text-Box)
+ - [Format Switch](#Format-Switch)
 
 ## Time Setter
 
