@@ -11,7 +11,11 @@ Guaranteed support for Google Chrome v60+. Compatibility with other browsers has
 
 ### Inside Google App Maker
 
-Make sure you add the the external resourcesi n the app settings.
+Make sure you add the required external resources in the app settings.
+* JavaScript URL - *https:/<span></span>/cdn.jsdelivr.net/gh/morfinismo/gamut/gamut.min.js*	
+* CSS URL - *https:/<span></span>/cdn.jsdelivr.net/gh/morfinismo/gamut/gamut.min.css*	
+![alt text](https://res.cloudinary.com/dvzwvxhev/image/upload/v1577232445/screenshot_201.png)
+
 
 Then, put the following code in the app startup script:
 
