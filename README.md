@@ -23,8 +23,8 @@ Then, put the following code in the app startup script:
 
 ## List of utilities
  * [Time Setter](#Time-Setter)
- * [Format Text Box](#Format-Text-Box)
- * [Format Switch](#Format-Switch)
+ * [Format Text Box (GOOGLE APP MAKER ONLY)](#Format-Text-Box)
+ * [Format Switch (GOOGLE APP MAKER ONLY)](#Format-Switch)
 
 ## Time Setter
 A utility that helps you set a certain amount of time in hours, minutes and seconds. Its usage is primarily focused towards systems that require to keep track of time for certain activites.
@@ -63,7 +63,7 @@ This can only be used with an **input** HTML element. Preferrably, use it after 
         gamut.timeSetter(document.querySelector["#setTime"], config);
     });
 
-## Format Text Box (GOOGLE APP MAKER ONLY)
+## Format Text Box
 A utility that helps you change the type of a TextBox widget.
 
 **Config:**
@@ -84,7 +84,7 @@ Depending on your need, add the following code to either the **onAttach** event 
     };
     gamut.formatTextBox(widget, config);
     
-## Format Switch (GOOGLE APP MAKER ONLY)
+## Format Switch
 A utility that helps you apply preset and custom variants of colors to the CheckBox widget Switch style. There are several presets already included, but you can use custom colors. The switch variant style can be applied at four levels: Global, Page, Single Switch Preset, Single Switch Custom. 
 
 If by any chance you are in need of using the four levels at the same time, take into account the following order of presedence: Single Switch Customer takes presedence over all. Single Switch Preset takes presedence over Page Level and Global and Page Level takes presedence over Global.
