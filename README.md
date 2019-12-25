@@ -85,9 +85,9 @@ Depending on your need, add the following code to either the **onAttach** event 
     gamut.formatTextBox(widget, config);
     
 ## Format Switch
-A utility that helps you apply preset and custom variants of colors to the CheckBox widget Switch style. There are several presets already included, but you can use custom colors. The switch variant style can be applied at four levels: Global, Page, Single Switch Preset, Single Switch Custom. 
+A utility that helps you apply preset and custom colors to the Checkbox widget *Switch* variant. Several presets are already included, but you can use custom colors. The color style can be applied at four levels: **Global**, **Page**, **Single Switch Preset**, **Single Switch Custom**. 
 
-If by any chance you are in need of using the four levels at the same time, take into account the following order of presedence: Single Switch Customer takes presedence over all. Single Switch Preset takes presedence over Page Level and Global and Page Level takes presedence over Global.
+If by any chance you are in need of using the four levels at the same time, take into account the following order of presedence: **Single Switch Custom** takes presedence over all. **Single Switch Preset** takes presedence over **Page Level** and **Global**; And **Page Level** takes presedence over **Global**.
 
 #### Global
 You must pass a **config** object as a second parameter when initializing the app. The config object can either contain a preset string or an object with the custom color you want.
