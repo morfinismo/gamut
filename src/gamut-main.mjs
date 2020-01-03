@@ -1,6 +1,7 @@
 import timeSetter from "./timeSetter/timeSetter.mjs";
 import formatTextBox from "./formatTextBox/formatTextBox.mjs";
 import formatSwitch from "./formatSwitch/formatSwitch.mjs";
+import timePicker from "./timePicker/timePicker.mjs"
 
 (window=>{
 
@@ -10,11 +11,13 @@ import formatSwitch from "./formatSwitch/formatSwitch.mjs";
         init(app, config){
 
             /* Library Properties */
-            this.observers = {}; //this property helps to keep track of certain element that are being observed for changes on some utilities
+            this.observers = {}; //this property helps to keep track of certain elements that are being observed for changes on some utilities
 
             /* Add general utilities */
             this.activeTimeSetter = null; //helper to keep track of the current open instance of timeSetter
-            this.timeSetter = timeSetter;            
+            this.timeSetter = timeSetter;   
+            this.activeTimePicker = null; //helper to keep track of the current open instance of timePicker
+            this.timePicker = timePicker;         
 
             /* Init Config */
             if(!app || !app.appKey){

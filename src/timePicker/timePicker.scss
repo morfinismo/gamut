@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+.gamut__timePicker {
+  border: 1px solid gray;
+  width: 300px;
+  height: 335px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+
+  &__time {
+    height: 34px;
+  }
+
+  &__meridiamSelector {
+    height: 16px;
+    display: flex;
+    justify-content: space-between;
+
+    &--am,
+    &--pm {
+      text-align: center;
+      flex-grow: 1;
+      border: 1px solid gray;
+      font-size: 12px;
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        background: #efefef;
+      }
+    }
+  }
+
+  &__clockWrapper {
+    flex-grow: 1;
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  &__clock {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    border: 1px solid gray;
+    margin: 0 auto;
+    position: relative;
+    transform: rotate(-1deg);
+
+    &--minPointer{
+      width: 1px;
+      height: 10px;
+      background-color: #424242;
+      position: absolute;
+      transform-origin: 0% 0%;
+    }
+
+    &--hrPointer {
+      position: absolute;
+      transform-origin: 0% 0%;
+
+      &::before {
+        top: -4px;
+        left: -7px;
+        content: "\25BC";
+        position: absolute;
+      }
+    }
+
+  }
+
+  &__labels {
+    border-radius: 50%;
+    width: 210px;
+    height: 210px;
+    margin: 0 auto;
+    position: absolute;
+    transform: rotate(-1deg);
+
+    &--hourLabel {
+      position: absolute;
+      transform: translate(-50%, -45%);
+      user-select: none;
+    }
+  }
+
+  &__minHand{
+    width: 20px;
+    height: 100px;
+    background-image: url(https://res.cloudinary.com/dvzwvxhev/image/upload/v1578025454/clock_min.svg);
+    background-size: 100% 100%;
+    position: absolute;
+    transform-origin: 50% 93%;
+    top: 15%;
+  }
+
+  &__hrHand{
+    width: 20px;
+    height: 50px;
+    background-image: url(https://res.cloudinary.com/dvzwvxhev/image/upload/v1578026058/clock_hr.svg);
+    background-size: 100% 100%;
+    position: absolute;
+    transform-origin: 50% 94%;
+    top: 33%;
+  }
+
+  &__done {
+    background: #efefef;
+    text-align: center;
+    border-top: 1px solid gray;
+    cursor: pointer;
+  }
+}

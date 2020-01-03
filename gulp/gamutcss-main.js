@@ -7,7 +7,8 @@ const sources = [
     "src/gamut-main.css",
     "src/timeSetter/timeSetter.css",
     "src/formatTextBox/formatTextBox.css",
-    "src/formatSwitch/formatSwitch.css"
+    "src/formatSwitch/formatSwitch.css",
+    "src/timePicker/timePicker.css"
 ];
 
 function bundleCss(){

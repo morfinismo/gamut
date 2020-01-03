@@ -7,7 +7,8 @@ const sources = [
     "./src/gamut-main.mjs",
     "./src/timeSetter/timeSetter.mjs",
     "./src/formatTextBox/formatTextBox.mjs",
-    "./src/formatSwitch/formatSwitch.mjs"
+    "./src/formatSwitch/formatSwitch.mjs",
+    "./src/timePicker/timePicker.mjs"
 ];
 
 function rollupJob(){
@@ -26,7 +27,7 @@ function rollupJob(){
 function mainGamut(){
     return src("./gamut.min.js")
     .pipe(babel({presets: ['@babel/env']}))
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(dest("./"));
 }
 

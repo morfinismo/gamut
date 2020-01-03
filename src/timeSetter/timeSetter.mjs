@@ -2,6 +2,7 @@ import { validateTextBox, newElem } from '../helpers/helpers.mjs';
 
 const timeSetter = (textBox, config) => {
 
+    //log error if there is no valid textBox
     if(!textBox){
         console.error("%cGAMUT Time Setter Error: "+"%cEither an input element or a Text Box Widget is required!","color:red","color:brown");
         return;
@@ -166,7 +167,7 @@ const timeSetter = (textBox, config) => {
     //create the timeSetter widget
     const widget = newElem("div");
 
-    //open the time setter widget
+    //open the timeSetter widget
     $ts.open = (top, left, height, width) => {
 
         //style the widget             
@@ -182,7 +183,7 @@ const timeSetter = (textBox, config) => {
         body.classList.add("gamut__timeSetter__body");
         body.style.flexDirection = width < 175 ? "column" : "row";
 
-        //build the time parameter boxes
+        //create the time parameter boxes
         const timeParams = ["Hrs", "Mins", "Secs"];
         timeParams.forEach((timeParam) => {
 
@@ -259,7 +260,7 @@ const timeSetter = (textBox, config) => {
             //append param input wrapper to the param box
             paramBox.appendChild(paramInputWrapper);
 
-            //append the param box to the  
+            //append the param box to the body
             body.appendChild(paramBox);
         });
 
