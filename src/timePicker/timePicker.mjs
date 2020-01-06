@@ -83,10 +83,26 @@ const timePicker = (dateBox, config)=>{
     //open the timePicker widget
     $tp.open = (top, left, height, width) => {
 
-        const rotateHand = (e)=>{
-            var elem = e.target;
-            let rotateVal = elem.style.transform;
+        const activateRotate = (e)=>{
+            const elem = e.target;
+            rotateHand(elem);
+        };
+
+        const rotateHand = (elem)=>{
+            const rotateVal = elem.style.transform;
             console.dir(elem);
+        };
+
+        const getMinHandInitialRotate = (minValue)=>{
+            const degrees = 360/60;
+            const initalValue = minValue * degrees;
+            return initalValue;
+        };
+
+        const getHourHandInitialRotate = (hourValue)=>{
+            const degrees = 360/12;
+            const initialValue = hourValue * degrees;
+            return initialValue;
         };
 
         //style the widget             
@@ -147,7 +163,7 @@ const timePicker = (dateBox, config)=>{
           rotateValue += rotateDegree;    
         }
         clockWrapper.appendChild(clock); 
-        const clockLabels = newElem("div");
+        const clockLabels = newElem("div");        
         clockLabels.classList.add("gamut__timePicker__labels"); 
         var totalLabels = 12;
         var rotateDegree = 360 / totalLabels;
@@ -171,10 +187,12 @@ const timePicker = (dateBox, config)=>{
         clockWrapper.appendChild(clockLabels);
         const minHand = newElem("div");
         minHand.classList.add("gamut__timePicker__minHand");
-        minHand.addEventListener("mousemove", rotateHand);
+        minHand.style.transform = `rotate(${getMinHandInitialRotate($tp.minuteValue)}deg)`;
+        minHand.addEventListener("mousedown", activateRotate);
         clockWrapper.appendChild(minHand);
         const hrHand = newElem("div");
         hrHand.classList.add("gamut__timePicker__hrHand");
+        hrHand.style.transform = `rotate(${getHourHandInitialRotate($tp.hourValue)}deg)`;
         clockWrapper.appendChild(hrHand);
 
 

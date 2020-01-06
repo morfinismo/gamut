@@ -115,17 +115,21 @@
   -webkit-transform-origin: 50% 93%;
           transform-origin: 50% 93%;
   top: 15%;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
 }
 
 .gamut__timePicker__hrHand {
   width: 20px;
-  height: 50px;
-  background-image: url(https://res.cloudinary.com/dvzwvxhev/image/upload/v1578026058/clock_hr.svg);
+  height: 70px;
+  background-image: url(https://res.cloudinary.com/dvzwvxhev/image/upload/v1578274567/clock_hr.svg);
   background-size: 100% 100%;
   position: absolute;
-  -webkit-transform-origin: 50% 94%;
-          transform-origin: 50% 94%;
-  top: 33%;
+  -webkit-transform-origin: 50% 82%;
+          transform-origin: 50% 82%;
+  top: 28%;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
 }
 
 .gamut__timePicker__done {
