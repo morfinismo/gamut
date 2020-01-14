@@ -8,27 +8,28 @@
   flex-direction: column;
   font-family: 'Roboto', sans-serif;
 
-  &__time {
-    height: 34px;
-  }
-
   &__meridiamSelector {
-    height: 16px;
+    height: 20px;
     display: flex;
     justify-content: space-between;
 
-    &--am,
-    &--pm {
+    &--meridiam {
       text-align: center;
       flex-grow: 1;
       border: 1px solid gray;
-      font-size: 12px;
+      font-size: 0.875rem;
+      line-height: 20px;
       cursor: pointer;
       user-select: none;
 
       &:hover {
         background: #efefef;
       }
+    }
+
+    &--selected{
+      background: #607d8b!important;
+      color: white;
     }
   }
 
@@ -48,7 +49,6 @@
     border: 1px solid gray;
     margin: 0 auto;
     position: relative;
-    transform: rotate(-1deg);
 
     &--minPointer{
       width: 1px;
@@ -78,7 +78,7 @@
     height: 210px;
     margin: 0 auto;
     position: absolute;
-    transform: rotate(-1deg);
+    pointer-events: none;
 
     &--hourLabel {
       position: absolute;
@@ -93,20 +93,50 @@
     background-image: url(https://res.cloudinary.com/dvzwvxhev/image/upload/v1578025454/clock_min.svg);
     background-size: 100% 100%;
     position: absolute;
-    transform-origin: 50% 93%;
+    transform-origin: 49% 92%;
     top: 15%;
     transform: rotate(0deg);
+    cursor: grab;
   }
 
   &__hrHand{
-    width: 20px;
+    width: 40px;
     height: 70px;
     background-image: url(https://res.cloudinary.com/dvzwvxhev/image/upload/v1578274567/clock_hr.svg);
     background-size: 100% 100%;
     position: absolute;
-    transform-origin: 50% 82%;
-    top: 28%;
+    transform-origin: 50% 93%;
+    top: 25%;
     transform: rotate(0deg);
+    cursor: grab;
+  }
+
+  &__time {
+    height: 34px;
+    display: flex;
+    justify-content: center;
+
+    > input{
+      width: 35px;
+      border: none;
+      border-bottom: 1px solid #ababab;
+      text-align: center;
+      font-size: 1.125rem;
+      outline: none;
+      height: 25px;
+      padding: 0;
+
+      &:focus{
+        border-bottom: 2px solid #607d8b;
+      }
+    }
+
+    &--separator{
+      user-select: none;
+      font-size: 1.125rem;
+      height: 25px;
+    }
+
   }
 
   &__done {

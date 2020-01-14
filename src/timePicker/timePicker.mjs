@@ -10,7 +10,7 @@ const timePicker = (dateBox, config)=>{
 
     //default configuration
     const defaultConfig = {
-        initialValue: "08:00",
+        initialValue: "8:00",
         zIndex: 9,
         valueChange: v => v
     }
@@ -60,7 +60,7 @@ const timePicker = (dateBox, config)=>{
     let hourValue = parseInt($tp.options.initialValue.split(":")[0]);
     $tp.hourValue =  (hourValue > 23 || hourValue === 0) ? 12 : hourValue > 12 ? hourValue - 12 : hourValue;
     $tp.minuteValue = parseInt($tp.options.initialValue.split(":")[1]);
-    $tp.meridiamValue = hourValue > 23 ? "am" : hourValue > 12 ? "pm" : "am";
+    $tp.meridiamValue = hourValue > 23 ? "am" : hourValue > 11 ? "pm" : "am";
 
     //set value to the $tp.input
     $tp.setValue = (hasChanged = false) => {
@@ -83,26 +83,65 @@ const timePicker = (dateBox, config)=>{
     //open the timePicker widget
     $tp.open = (top, left, height, width) => {
 
-        const activateRotate = (e)=>{
-            const elem = e.target;
-            rotateHand(elem);
-        };
-
-        const rotateHand = (elem)=>{
-            const rotateVal = elem.style.transform;
+        //rotate handler
+        const rotateHand = (event)=>{
+            const elem = event.target;
+            elem.style.cursor = "grabbing";
             console.dir(elem);
+            let rotating = true;
+            const clock = document.querySelector(".gamut__timePicker__clock");
+            const rect = clock.getBoundingClientRect(); // get clock size and position
+            const radius = rect.width / 2; // calculate radius based on size
+            const rotateHandler = (e)=>{
+                const radians = Math.atan2(e.pageX - (rect.x + radius), e.pageY - (rect.y + radius));
+                let rotateDegrees = (radians * (180 / Math.PI) * -1) -180;
+                if (rotating) {
+                    elem.style.transform = `rotate(${rotateDegrees}deg)`;
+                }
+            };
+            document.addEventListener("mousemove", rotateHandler);
+            const cancelRotateHandler = (event)=>{
+                elem.style.cursor = "grab";
+                rotating = !rotating;
+                console.log('rotate: ' + rotating);
+                document.removeEventListener("mousemove", rotateHandler);
+                document.removeEventListener("mouseup", cancelRotateHandler);
+                
+            };
+            document.addEventListener("mouseup", cancelRotateHandler);
         };
 
+        //set initial value for the analog clock minute hand
         const getMinHandInitialRotate = (minValue)=>{
             const degrees = 360/60;
             const initalValue = minValue * degrees;
             return initalValue;
         };
 
+        //set initial rotate for the analog clock hour hand
         const getHourHandInitialRotate = (hourValue)=>{
             const degrees = 360/12;
             const initialValue = hourValue * degrees;
             return initialValue;
+        };
+
+        //set initial value for the digital clock value
+        const getTimeParamValue = (timeParam)=>{
+            if(timeParam === "hour"){
+                return $tp.hourValue < 10 ? "0"+$tp.hourValue : $tp.hourValue;
+            } else if(timeParam === "minute"){
+                return $tp.minuteValue < 10 ? "0"+$tp.minuteValue : $tp.minuteValue;
+            }
+        };
+
+        //toggle selected meridiam handler
+        const toggleMeridiam = (e)=>{
+            const newValue = e.target.dataset.meridiamValue;
+            const meridiams = document.querySelectorAll(".gamut__timePicker__meridiamSelector--meridiam");
+            meridiams.forEach(meridiam=>{
+                meridiam.classList.toggle("gamut__timePicker__meridiamSelector--selected");
+            });
+            $tp.meridiamValue = newValue;
         };
 
         //style the widget             
@@ -113,24 +152,26 @@ const timePicker = (dateBox, config)=>{
         widget.style.zIndex = $tp.options.zIndex;
         widget.classList.add("gamut__timePicker");
 
-        //create the widget time display
-        const timeDisplay = newElem("div");
-        timeDisplay.classList.add("gamut__timePicker__time");
-
-        //append the time display to the widget
-        widget.appendChild(timeDisplay);
-
         //create the meridiam selector
         const meridiamSelector = newElem("div");
         meridiamSelector.classList.add("gamut__timePicker__meridiamSelector");
         const amSelector = newElem("div");
+        amSelector.setAttribute("data-meridiam-value", "am");
+        amSelector.addEventListener("click", toggleMeridiam);     
         amSelector.innerHTML = "AM";
-        amSelector.classList.add("gamut__timePicker__meridiamSelector--am")
+        amSelector.classList.add("gamut__timePicker__meridiamSelector--meridiam");
         meridiamSelector.appendChild(amSelector);
         const pmSelector = newElem("div");
+        pmSelector.setAttribute("data-meridiam-value", "pm");
+        pmSelector.addEventListener("click", toggleMeridiam);
         pmSelector.innerHTML = "PM";
-        pmSelector.classList.add("gamut__timePicker__meridiamSelector--pm")
+        pmSelector.classList.add("gamut__timePicker__meridiamSelector--meridiam");
         meridiamSelector.appendChild(pmSelector);
+        if($tp.meridiamValue === "am"){
+            amSelector.classList.toggle("gamut__timePicker__meridiamSelector--selected");
+        } else if($tp.meridiamValue === "pm"){
+            pmSelector.classList.toggle("gamut__timePicker__meridiamSelector--selected");
+        }
 
         //append the meridiam selector to the widget
         widget.appendChild(meridiamSelector);
@@ -140,11 +181,11 @@ const timePicker = (dateBox, config)=>{
         clockWrapper.classList.add("gamut__timePicker__clockWrapper");
         const clock = newElem("div");
         clock.classList.add("gamut__timePicker__clock"); 
-        var minutePointers = 60;
-        var rotateDegree = 360 / minutePointers;
-        var clockSize = 202;
-        var rotateValue = 90;
-        for( var i=0; i<minutePointers; i++){  	
+        const minutePointers = 60;
+        const minRotateDegree = 360 / minutePointers;
+        const clockSize = 202;
+        let rotateValue = 90;
+        for( let i=0; i<minutePointers; i++){  	
           let pointer = newElem("div");
           let angle = i * (Math.PI / (minutePointers/2));
           let left = (clockSize / 2) + ((clockSize / 2) * Math.cos(angle));
@@ -160,17 +201,16 @@ const timePicker = (dateBox, config)=>{
           pointer.style.left = `${leftPercent}%`;
           pointer.style.top = `${topPercent}%`;
           clock.appendChild(pointer);
-          rotateValue += rotateDegree;    
+          rotateValue += minRotateDegree;    
         }
         clockWrapper.appendChild(clock); 
         const clockLabels = newElem("div");        
         clockLabels.classList.add("gamut__timePicker__labels"); 
-        var totalLabels = 12;
-        var rotateDegree = 360 / totalLabels;
-        var circleSize = 160;
-        var hourValue = 3;
-        for( var i=0; i<totalLabels; i++){  	
-          var label = newElem("span");
+        const totalLabels = 12;
+        const circleSize = 160;
+        let hourValue = 3;
+        for( let i=0; i<totalLabels; i++){  	
+          const label = newElem("span");
           label.innerHTML = hourValue;
           let angle = i * (Math.PI / (totalLabels/2));
           let left = (circleSize / 2) + ((circleSize / 2) * Math.cos(angle));
@@ -188,9 +228,10 @@ const timePicker = (dateBox, config)=>{
         const minHand = newElem("div");
         minHand.classList.add("gamut__timePicker__minHand");
         minHand.style.transform = `rotate(${getMinHandInitialRotate($tp.minuteValue)}deg)`;
-        minHand.addEventListener("mousedown", activateRotate);
+        minHand.addEventListener("mousedown", rotateHand);
         clockWrapper.appendChild(minHand);
         const hrHand = newElem("div");
+        hrHand.addEventListener("mousedown", rotateHand);
         hrHand.classList.add("gamut__timePicker__hrHand");
         hrHand.style.transform = `rotate(${getHourHandInitialRotate($tp.hourValue)}deg)`;
         clockWrapper.appendChild(hrHand);
@@ -198,6 +239,32 @@ const timePicker = (dateBox, config)=>{
 
         //append clockWrapper to widget
         widget.appendChild(clockWrapper);
+
+        //create the widget time display
+        const timeDisplay = newElem("div");
+        timeDisplay.classList.add("gamut__timePicker__time");
+        ["hourInput","separator","minuteInput"].forEach((elemName)=>{
+            if(elemName === "separator"){
+                let separator = newElem("span");
+                separator.classList.add("gamut__timePicker__time--separator");
+                separator.innerHTML = ":";
+                timeDisplay.appendChild(separator);
+            } else {
+                let inputElem = newElem("input");
+                inputElem.setAttribute("type", "text");
+                if(elemName === "hourInput"){
+                    inputElem.setAttribute("data-time-param", "hour");
+                    inputElem.value = getTimeParamValue("hour");
+                } else if(elemName === "minuteInput"){
+                    inputElem.setAttribute("data-time-param", "minute");
+                    inputElem.value = getTimeParamValue("minute");
+                }
+                timeDisplay.appendChild(inputElem);
+            }
+        });
+
+        //append the time display to the widget
+        widget.appendChild(timeDisplay);        
       
         //done button
         const doneButton = newElem("div");
@@ -218,6 +285,7 @@ const timePicker = (dateBox, config)=>{
             the parent element of the input, which is the dateBox widget inside appmaker. If it is not 
             rendered in App Maker, we just need to check it matches the input element.
         */
+       $tp.setValue(); 
         const proceedToClose = $tp.isAppMaker ? (e.target !== $tp.input.parentElement) : (e.target !== $tp.input);
         if (proceedToClose) {
             $tp.input.parentNode.removeChild(widget);
@@ -240,8 +308,6 @@ const timePicker = (dateBox, config)=>{
 
     //add focus event to $tp.input
     $tp.focus = (e) => {
-
-        console.log("here");
 
         //close any open instance if any
         const isOpened = gamut.activeTimePicker ? true : false;

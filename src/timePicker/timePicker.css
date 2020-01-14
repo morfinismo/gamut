@@ -11,24 +11,21 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.gamut__timePicker__time {
-  height: 34px;
-}
-
 .gamut__timePicker__meridiamSelector {
-  height: 16px;
+  height: 20px;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: justify;
           justify-content: space-between;
 }
 
-.gamut__timePicker__meridiamSelector--am, .gamut__timePicker__meridiamSelector--pm {
+.gamut__timePicker__meridiamSelector--meridiam {
   text-align: center;
   -webkit-box-flex: 1;
           flex-grow: 1;
   border: 1px solid gray;
-  font-size: 12px;
+  font-size: 0.875rem;
+  line-height: 20px;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -36,8 +33,13 @@
           user-select: none;
 }
 
-.gamut__timePicker__meridiamSelector--am:hover, .gamut__timePicker__meridiamSelector--pm:hover {
+.gamut__timePicker__meridiamSelector--meridiam:hover {
   background: #efefef;
+}
+
+.gamut__timePicker__meridiamSelector--selected {
+  background: #607d8b !important;
+  color: white;
 }
 
 .gamut__timePicker__clockWrapper {
@@ -60,8 +62,6 @@
   border: 1px solid gray;
   margin: 0 auto;
   position: relative;
-  -webkit-transform: rotate(-1deg);
-          transform: rotate(-1deg);
 }
 
 .gamut__timePicker__clock--minPointer {
@@ -92,8 +92,7 @@
   height: 210px;
   margin: 0 auto;
   position: absolute;
-  -webkit-transform: rotate(-1deg);
-          transform: rotate(-1deg);
+  pointer-events: none;
 }
 
 .gamut__timePicker__labels--hourLabel {
@@ -112,24 +111,60 @@
   background-image: url(https://res.cloudinary.com/dvzwvxhev/image/upload/v1578025454/clock_min.svg);
   background-size: 100% 100%;
   position: absolute;
-  -webkit-transform-origin: 50% 93%;
-          transform-origin: 50% 93%;
+  -webkit-transform-origin: 49% 92%;
+          transform-origin: 49% 92%;
   top: 15%;
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
+  cursor: -webkit-grab;
+  cursor: grab;
 }
 
 .gamut__timePicker__hrHand {
-  width: 20px;
+  width: 40px;
   height: 70px;
   background-image: url(https://res.cloudinary.com/dvzwvxhev/image/upload/v1578274567/clock_hr.svg);
   background-size: 100% 100%;
   position: absolute;
-  -webkit-transform-origin: 50% 82%;
-          transform-origin: 50% 82%;
-  top: 28%;
+  -webkit-transform-origin: 50% 93%;
+          transform-origin: 50% 93%;
+  top: 25%;
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.gamut__timePicker__time {
+  height: 34px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+.gamut__timePicker__time > input {
+  width: 35px;
+  border: none;
+  border-bottom: 1px solid #ababab;
+  text-align: center;
+  font-size: 1.125rem;
+  outline: none;
+  height: 25px;
+  padding: 0;
+}
+
+.gamut__timePicker__time > input:focus {
+  border-bottom: 2px solid #607d8b;
+}
+
+.gamut__timePicker__time--separator {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-size: 1.125rem;
+  height: 25px;
 }
 
 .gamut__timePicker__done {
