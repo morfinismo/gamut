@@ -27,7 +27,7 @@ function rollupJob(){
 function mainGamut(){
     return src("./gamut.min.js")
     .pipe(babel({presets: ['@babel/env']}))
-    //.pipe(uglify())
+    .pipe(uglify())
     .pipe(dest("./"));
 }
 

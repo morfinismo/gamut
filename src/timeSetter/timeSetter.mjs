@@ -15,7 +15,7 @@ const timeSetter = (textBox, config) => {
         zIndex: 9,
         maxTime: "99:59:59", //TODO: enable support to limit the max time,
         valueChange: v => v
-    }
+    };
     
     //main timeSetter object
     const $ts = {
@@ -83,7 +83,7 @@ const timeSetter = (textBox, config) => {
         if (hasChanged) {
             $ts.options.valueChange(newValue);
         }
-    }
+    };
     $ts.setValue(); //sets the default value upon initialization
 
     //handles the time argument value change when a controller is clicked
@@ -131,7 +131,7 @@ const timeSetter = (textBox, config) => {
 
         //change the value of the $ts.input
         $ts.setValue(true);
-    }
+    };
 
     //handles the time parameter value change when manually edited
     $ts.paramChange = (e) => {
@@ -162,7 +162,7 @@ const timeSetter = (textBox, config) => {
 
         //change the value of the $ts.input
         $ts.setValue(true);
-    }
+    };
 
     //create the timeSetter widget
     const widget = newElem("div");
@@ -173,7 +173,7 @@ const timeSetter = (textBox, config) => {
         //style the widget             
         widget.innerHTML = "";
         widget.style.width = width + "px";
-        widget.style.top = top + height + 2 + "px"
+        widget.style.top = top + height + 2 + "px";
         widget.style.left = left + "px";
         widget.style.zIndex = $ts.options.zIndex;
         widget.classList.add("gamut__timeSetter");
@@ -278,7 +278,7 @@ const timeSetter = (textBox, config) => {
         //insert widget to DOM
         $ts.input.parentNode.appendChild(widget);
         window.addEventListener("click", $ts.close); //attach close to the window click
-    }
+    };
 
     //close the widget
     $ts.close = (e) => {
@@ -292,13 +292,13 @@ const timeSetter = (textBox, config) => {
             window.removeEventListener("click", $ts.close); //remove close from the window click
             gamut.activeTimeSetter = null;
         }
-    }
+    };
 
     //prevent widget close
     $ts.preventClose = (e) => {
         e.stopPropagation();
         return false;
-    }
+    };
 
     //attach prevent close to widget and in case is App Maker, input parent also
     widget.addEventListener("click", $ts.preventClose);

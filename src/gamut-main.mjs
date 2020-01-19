@@ -43,7 +43,6 @@ import timePicker from "./timePicker/timePicker.mjs"
                 });
                 if(config !== undefined && config !== null && typeof config === "object"){
                     if(config.defaultSwitch !== undefined && config.defaultSwitch !== null){
-                        const defaultSwitch = config.defaultSwitch;
                         formatSwitch(null, config.defaultSwitch, true, rootWidgets);
                     }
                 }
