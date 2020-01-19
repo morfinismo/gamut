@@ -4,6 +4,9 @@ A collection of utilities to use with [Google App Maker](https://developers.goog
 ## Browser support
 Guaranteed support for Google Chrome v60+. Compatibility with other browsers has not been tested yet but most of it should work.
 
+## Demo Application
+You can download the demo app from here: [GAMUT Demo](https://morfin.me/gamut/GAMUT%20-%20DEMO.zip)
+
 ## Initializing the library
 ### Inside Google App Maker
 Make sure you add the required external resources in the app settings.
