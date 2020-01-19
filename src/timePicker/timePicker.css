@@ -10,6 +10,7 @@
           flex-direction: column;
   font-family: 'Roboto', sans-serif;
   background: #fff;
+  position: fixed;
 }
 
 .gamut__timePickerBtn {

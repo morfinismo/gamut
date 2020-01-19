@@ -208,14 +208,8 @@ const timePicker = (dateBox, config)=>{
         //style the widget             
         widget.innerHTML = "";
         //widget.style.width = width + "px";
-        if($tp.isAppMaker){
-            widget.style.position = "absolute";
-            widget.style.top = height + "px";
-            widget.style.left = "0px";
-        } else {
-            widget.style.top = top + height + 2 + "px";
-            widget.style.left = left + "px";
-        }       
+        widget.style.top = top + height + 2 + "px";
+        widget.style.left = left + "px";     
         widget.style.zIndex = $tp.options.zIndex;
         widget.classList.add("gamut__timePicker");
 
