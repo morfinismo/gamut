@@ -34,9 +34,9 @@ A utility that helps you set a certain amount of time in hours, minutes and seco
  * **leadingZeros** (boolean) - Whether to show the time value with no leading zeros, e.g. 0:3:5; or to show it with leading zeros, e.g. 00:03:05. The default is true.
  * **initialValue** (string) - A formatted string using the pattern H:M:S or HH:MM:SS. This is the value that will be shown when the time setter initializes.
  * **zIndex** (number) - Used to set up the z-index value of the time setter widget when it becomes visible.
- * **valueChange** (function) - A callback function to execute each time the value changes. This fuction receives the new value as the only parameter.
+ * **valueChange** (function) - A callback function to execute each time the value changes. This function receives the new value as the only parameter.
 
-### Example Usage - Inisde Google App Maker
+### Example Usage - Inside Google App Maker
 This can only be used with a **TextBox** widget. Depending on your need, add the following code to either the **onAttach** event handler or the **onDataLoad** event handler of the widget:
 
     var config = {
@@ -152,7 +152,7 @@ You need to include the following code inside the **onAttach** event handler of 
     gamut.formatSwitch(widget, defaultSwitch);
 
 
-## Time Pikcer
+## Time Picker
 A utility that helps you select a time using an analog clock.
 
 **Config:**
@@ -160,7 +160,7 @@ A utility that helps you select a time using an analog clock.
  * **zIndex** (number) - Used to set up the z-index value of the time picker widget when it becomes visible.
  * **onClose** (function) - A callback function to execute each time the time picker closes. This function receives the new value as the only parameter. When using it in App Maker, the parameter provided to this callback is a date object. Outside of App Maker, the parameter provided to this callback is a string.
  
-### Example Usage - Inisde Google App Maker
+### Example Usage - Inside Google App Maker
 This can only be used with a **DateBox** widget. Depending on your need, add the following code to either the **onAttach** event handler or the **onDataLoad** event handler of the widget:
 
     var config = {
