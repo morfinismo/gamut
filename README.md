@@ -173,7 +173,7 @@ This can only be used with a **DateBox** widget. Depending on your need, add the
             console.log(newValue);
         }
     };
-    gamut.timeSetter(widget, config);
+    gamut.timePicker(widget, config);
 
 ### Example Usage - Outside Google App Maker
 This can only be used with an **input** HTML element. Preferably, use it after the DOM content is loaded:
@@ -186,6 +186,6 @@ This can only be used with an **input** HTML element. Preferably, use it after t
         }
     };
     document.addEventListener("DOMContentLoaded", ()=>{
-        gamut.timeSetter(document.querySelector["#timePicker"], config);
+        gamut.timePicker(document.querySelector["#timePicker"], config);
     });
 
