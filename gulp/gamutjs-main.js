@@ -8,7 +8,8 @@ const sources = [
     "./src/timeSetter/timeSetter.mjs",
     "./src/formatTextBox/formatTextBox.mjs",
     "./src/formatSwitch/formatSwitch.mjs",
-    "./src/timePicker/timePicker.mjs"
+    "./src/timePicker/timePicker.mjs",
+    "./src/infiniteScroll/infiniteScroll.mjs"
 ];
 
 function rollupJob(){

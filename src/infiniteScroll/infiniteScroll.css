@@ -1,0 +1,14 @@
+.gamut__infiniteScrolling--spinnerPanel {
+  display: -webkit-box;
+  display: flex;
+  width: 100%;
+  padding: 8px 0;
+  -webkit-box-pack: center;
+          justify-content: center;
+  align-content: center;
+  background: transparent;
+}
+
+.gamut__infiniteScrolling-spinner {
+  height: 24px;
+}

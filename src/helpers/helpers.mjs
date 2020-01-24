@@ -10,7 +10,25 @@ const validatPageWidget = widget=>widget.__gwt_instance.mb === "Panel" && widget
 //App Maker DateBox widget validator
 const validateDateBox = widget=>widget.__gwt_instance.mb === "DateTextBox"; 
 
+//App Maker List widget validator
+const validateListPanel = widget=>widget.__gwt_instance.mb === "ListPanel"; 
+
+//App Maker Grid widget validator
+const validateGrid = widget=>widget.__gwt_instance.mb === "GridPanel"; 
+
+//Scrolling widget validator
+const validateScrollingWidget = widget=>validateListPanel(widget) || validateGrid(widget);
+
 //div element generator
 const newElem = (elem)=>document.createElement(elem);
 
-export { validateTextBox, validateCheckBox, validatPageWidget, validateDateBox, newElem };
+export { 
+    validateTextBox, 
+    validateCheckBox, 
+    validatPageWidget, 
+    validateDateBox, 
+    validateListPanel,
+    validateGrid,
+    validateScrollingWidget,
+    newElem 
+};

@@ -1,7 +1,8 @@
 import timeSetter from "./timeSetter/timeSetter.mjs";
 import formatTextBox from "./formatTextBox/formatTextBox.mjs";
 import formatSwitch from "./formatSwitch/formatSwitch.mjs";
-import timePicker from "./timePicker/timePicker.mjs"
+import timePicker from "./timePicker/timePicker.mjs";
+import infiniteScroll from "./infiniteScroll/infiniteScroll.mjs";
 
 (window=>{
 
@@ -27,6 +28,7 @@ import timePicker from "./timePicker/timePicker.mjs"
                 /* Add Google App Maker specfic utilities */
                 this.formatTextBox = formatTextBox;
                 this.formatSwitch = formatSwitch;
+                this.infiniteScroll = infiniteScroll;
                 
                 /* formatSwitches init config */
                 const pages = app.pages._values;

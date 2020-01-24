@@ -8,7 +8,8 @@ const sources = [
     "src/timeSetter/timeSetter.css",
     "src/formatTextBox/formatTextBox.css",
     "src/formatSwitch/formatSwitch.css",
-    "src/timePicker/timePicker.css"
+    "src/timePicker/timePicker.css",
+    "src/infiniteScroll/infiniteScroll.css"
 ];
 
 function bundleCss(){
