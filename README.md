@@ -10,9 +10,9 @@ You can download the demo app from here: [GAMUT Demo](https://morfin.me/gamut/GA
 ## Initializing the library
 ### Inside Google App Maker
 Make sure you add the required external resources in the app settings.
-* JavaScript URL — *https:/<span></span>/cdn.jsdelivr.net/gh/morfinismo/gamut/gamut.min.js*	
-* CSS URL — *https:/<span></span>/cdn.jsdelivr.net/gh/morfinismo/gamut/gamut.min.css*	
-![alt text](https://res.cloudinary.com/dvzwvxhev/image/upload/v1577232445/screenshot_201.png)
+* JavaScript URL — *https:/<span></span>/cdn.jsdelivr.net/gh/morfinismo/gamut@v1.011920/gamut.min.js*	
+* CSS URL — *https:/<span></span>/cdn.jsdelivr.net/gh/morfinismo/gamut@v1.011920/gamut.min.css*	
+![alt text](https://res.cloudinary.com/dvzwvxhev/image/upload/v1579466216/screenshot_219.png)
 
 Then, put the following code in the app startup script:
 
@@ -173,7 +173,7 @@ This can only be used with a **DateBox** widget. Depending on your need, add the
             console.log(newValue);
         }
     };
-    gamut.timeSetter(widget, config);
+    gamut.timePicker(widget, config);
 
 ### Example Usage - Outside Google App Maker
 This can only be used with an **input** HTML element. Preferably, use it after the DOM content is loaded:
@@ -186,6 +186,6 @@ This can only be used with an **input** HTML element. Preferably, use it after t
         }
     };
     document.addEventListener("DOMContentLoaded", ()=>{
-        gamut.timeSetter(document.querySelector["#timePicker"], config);
+        gamut.timePicker(document.querySelector["#timePicker"], config);
     });
 
