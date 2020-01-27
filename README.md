@@ -1,3 +1,5 @@
+##THIS PROJECT IS NO LONGER CONTINUED SINCE GOOGLE APP MAKER IS SHUTTING DOWN!
+
 # GAMUT - (G)oogle (A)pp (M)aker (UT)ilities
 A collection of utilities to use with [Google App Maker](https://developers.google.com/appmaker/). Support outside of Google App Maker might be available for some utilities but the primary focus is compatibility with Google App Maker.
 
